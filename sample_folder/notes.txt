@@ -1,0 +1,7 @@
+docker cp ~/vscode/manoj_tasks/solr_xml/entity_conf_9_7 c06b545bd3d5:/solr-9.7.0/server/solr/configsets/entity_conf_9_7
+
+
+docker exec -it c06b545bd3d5 /solr-9.7.0/bin/solr zk upconfig -n entity_conf_9_7 -d /solr-9.7.0/server/solr/configsets/entity_conf_9_7 -z zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
+
+
+bin/solr zk upconfig -n entity_conf -d /solr-9.7.0/server/solr/configsets/entity_conf_9_7 -z 127.0.0.1:9983
